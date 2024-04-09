@@ -1,0 +1,245 @@
+body {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-style: normal;
+}
+
+:root {
+  --mocka: #b8ac95;
+  --latte: #e1dcd2;
+  --dark_mocka: #5c523e;
+  --dark-coffee: #8d7b68;
+}
+
+.container {
+  margin: 0 auto; /* Center the container horizontally */
+  background-color: var(--latte);
+  position: relative;
+  max-width: 1024px;
+}
+
+/* Header Editing */
+
+#mainHeader {
+  background-color: var(--mocka);
+  width: 100%;
+}
+
+#mainHeader.fixed {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--mocka); /* Adjust background color as needed */
+  z-index: 1000; /* Ensure header is above other content */
+  opacity: 0.95;
+  backdrop-filter: blur(50px);
+}
+
+.Header_Container {
+  display: flex; /* Use flexbox to make children inline */
+  align-items: center; /* Align children vertically center */
+  justify-content: space-between; /* Space items evenly */
+}
+
+.Main_Options {
+  list-style: none; /* Remove default list styles */
+  margin: 0;
+  padding: 20px;
+}
+
+.Main_Options li {
+  display: inline-block; /* Display list items inline */
+  margin-left: 20px; /* Add spacing between list items */
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.Main_Options li a {
+  text-decoration: none;
+  color: var(--dark_mocka);
+}
+
+.Main_Options li a:hover {
+  color: black;
+}
+
+#Main_Title {
+  margin-right: auto; /* Pushes the list items to the right */
+  font-family: "WindSong", cursive;
+  font-weight: 400;
+  font-style: normal;
+  padding-left: 20px;
+}
+
+/* Main Editing */
+
+/* Editing the first section */
+
+#welcome_page {
+  display: block; /* Use flexbox to display children in blocks */
+  height: 100vh;
+}
+
+#Welcome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.welcome_paragraph {
+  text-align: center;
+}
+
+#welcome_text {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+
+#welcome_image {
+  width: 80%;
+  height: 70%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10%;
+}
+
+/* Editing the second section */
+
+#chef_presentation {
+  display: flex; /* Use flexbox to display children inline */
+  align-items: center; /* Align items vertically center */
+  justify-content: space-between; /* Add space between elements */
+  flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+  height: 100vh;
+}
+
+#chef_section_title {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.section_text1 {
+  flex: 1; /* Take up remaining space */
+  text-align: justify;
+  font-size: 20px;
+}
+
+.section_figure1 {
+  flex: 1; /* Take up remaining space */
+  margin-right: 0;
+}
+
+#chef_picture {
+  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+}
+
+/* Editing the third section */
+
+#menu_inspiration {
+  display: flex; /* Use flexbox to display children inline */
+  align-items: center; /* Align items vertically center */
+  justify-content: space-between; /* Add space between elements */
+  flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+  height: 100vh;
+}
+
+#inspiration_section_title {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.section_text2 {
+  flex: 1; /* Take up remaining space */
+  text-align: justify;
+  font-size: 20px;
+}
+
+.section_figure2 {
+  flex: 1; /* Take up remaining space */
+  margin-left: 0;
+}
+
+#restaurant_home_display {
+  max-width: 100%;
+}
+
+/* CSS for screens smaller than 768 pixels (smartphones) */
+@media (max-width: 767px) {
+  .container {
+    width: 100%; /* Full width */
+  }
+}
+
+/* CSS for screens between 768 and 1023 pixels (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    width: 90%; /* 90% of the viewport width */
+  }
+}
+
+/* CSS for screens larger than 1024 pixels (desktops) */
+@media (min-width: 1024px) {
+  .container {
+    width: 80%; /* 80% of the viewport width */
+  }
+}
+
+/* Footer editing */
+
+/* Back to top button Edit */
+
+#backToTopBtn {
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    var(--dark_mocka),
+    var(--mocka),
+    var(--dark_mocka)
+  ); /* Gradient background */
+  border: 1px dashed var(--latte); /* Dashed border */
+  border-radius: 50%; /* Rounded border */
+  color: var(--dark_mocka);
+  text-align: center;
+  line-height: 40px;
+  font-size: 24px;
+  opacity: 0.5; /* Semi-transparent by default */
+  transition: opacity 500ms ease; /* Transition for opacity and transform */
+  text-decoration: none;
+}
+
+#backToTopBtn:hover {
+  opacity: 1; /* Make button opaque on hover */
+}
+
+#backToTopBtn:hover span {
+  visibility: visible; /* Show tooltip on hover */
+}
+
+#backToTopBtn span {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%);
+  background-color: var(--dark_mocka);
+  color: var(--latte);
+  padding: 5px 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  visibility: hidden; /* Hide tooltip by default */
+  display: inline-block; /*Text display*/
+  white-space: nowrap; /*Text display inline*/
+}
