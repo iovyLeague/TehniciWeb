@@ -5,10 +5,11 @@ body {
 }
 
 :root {
-  --mocka: #b8ac95;
-  --latte: #e1dcd2;
-  --dark_mocka: #5c523e;
-  --dark-coffee: #8d7b68;
+  --mocka: #dbc1ac;
+  --latte: #ece0d1;
+  --dark_mocka: #634832;
+  --dark-coffee: #967259;
+  --roasted-coffee: #38220f;
 }
 
 .container {
@@ -32,7 +33,7 @@ body {
   width: 100%;
   background-color: var(--mocka); /* Adjust background color as needed */
   z-index: 1000; /* Ensure header is above other content */
-  opacity: 0.95;
+  border-bottom: 1px solid var(--dark_mocka);
   backdrop-filter: blur(50px);
 }
 
@@ -52,7 +53,7 @@ body {
   display: inline-block; /* Display list items inline */
   margin-left: 20px; /* Add spacing between list items */
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.2em;
 }
 
 .Main_Options li a {
@@ -78,17 +79,16 @@ body {
 
 #welcome_page {
   display: block; /* Use flexbox to display children in blocks */
-  height: 100vh;
+  margin-bottom: 50px;
 }
 
 #Welcome {
   display: flex;
   align-items: center;
   justify-content: center;
-  align-items: center;
   margin-top: 40px;
   margin-bottom: 20px;
-  font-size: 30px;
+  font-size: 2em;
 }
 
 .welcome_paragraph {
@@ -100,13 +100,63 @@ body {
   margin-bottom: 20px;
 }
 
-
 #welcome_image {
   width: 80%;
   height: 70%;
   display: block;
   margin: 0 auto;
   border-radius: 10%;
+}
+
+/* Editing the table */
+
+.table-container {
+  width: 80%;
+  margin: 50px auto;
+  overflow-x: auto; /* Horizontal scrollbar */
+  padding: 30px;
+  border-radius: 5px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 5px solid var(--dark_mocka); /* Double border around the table */
+}
+
+caption {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding: 1em;
+}
+
+th,
+td {
+  padding: 10px;
+  border: 1px solid var(--dark_mocka); /* Border around each cell */
+  transition: background-color 0.75s, color 0.75s; /* Transition effect */
+  text-align: center;
+}
+
+thead th {
+  background-color: var(--dark-coffee); /* Header background color */
+  overflow: hidden;
+}
+
+tbody tr:nth-child(odd) td {
+  background-color: var(--mocka); /* Alternate row background color */
+}
+
+tbody tr:hover td {
+  background-color: var(--dark_mocka); /* Hover row background color */
+  color: var(--latte); /* Hover row text color */
+  border-width: 5px; /* Increase border width on hover */
+}
+
+tfoot td {
+  text-align: center;
+  font-style: italic;
 }
 
 /* Editing the second section */
@@ -171,6 +221,83 @@ body {
 
 #restaurant_home_display {
   max-width: 100%;
+}
+
+/* Editing the FAQ- section */
+
+.title_questions {
+  text-align: center;
+  font-size: 36 px;
+  margin: 1em;
+}
+
+.space_distance {
+  padding: 3em;
+}
+
+.faq_section {
+  padding: 0 2em;
+  margin-bottom: 150px;
+}
+
+.faq {
+  list-style: none;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.faq li {
+  background: var(--mocka);
+  border-bottom: 1px var(--dark_mocka) solid;
+  border-right: 1px var(--dark_mocka) solid;
+}
+
+.faq li:first-child {
+  border-top: 1px var(--dark_mocka) solid;
+}
+
+.q {
+  padding: 1em 0;
+  border-left: 10px var(--dark-coffee) solid;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.q:hover,
+.q:hover .arrow {
+  border-left-color: var(--dark_mocka);
+}
+
+.arrow {
+  display: inline-block;
+  margin: 0 0.5em;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-left: 10px solid var(--dark-coffee);
+  border-bottom: 6px solid transparent;
+  transition: 0.3s;
+}
+
+.faq p {
+  color: var(--dark_mocka);
+  line-height: 20px;
+}
+
+.a {
+  overflow: hidden;
+  height: 0;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.a-opened {
+  padding: 1em 2em 2em 2.3em;
+  height: initial;
+}
+
+.arrow-rotated {
+  transform: rotate(90deg);
 }
 
 /* CSS for screens smaller than 768 pixels (smartphones) */
